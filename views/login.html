@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        // Script to handle login
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const userName = document.getElementById('name').value;
+            
+            // Save the name to session storage to use it across pages
+            sessionStorage.setItem('userName', userName);
+    
+            // Check if the user has already selected tags
+            const userTags = sessionStorage.getItem('userTags');
+            if (!userTags) {
+                // Redirect to the tags selection page if no tags are found
+                window.location.href = "/selectTags";
+            } else {
+                // Redirect to the profile page if tags are found
+                window.location.href = "/profile";
+            }
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Tags</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS if you have one -->
+    <script src="selectTags.js" defer></script> <!-- Link to your JavaScript file -->
+</head>
+<body>
+    <h1>Select Movie Tags</h1>
+    <div id="tag-container">
+        <!-- Tags will be loaded here -->
+    </div>
+
+    <div id="favorite-movies">
+        <h2>Your Favorite Movies:</h2>
+        <ul id="favorite-list"></ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTags();
+        });
+
+        async function loadTags() {
+            const response = await fetch('/movies');
+            const movies = await response.json();
+            const tags = {};
+
+            // Create tags from movie genres
+            movies.forEach(movie => {
+                movie.tags.forEach(tag => {
+                    if (!tags[tag]) {
+                        tags[tag] = [];
+                    }
+                    tags[tag].push(movie);
+                });
+            });
+
+            const tagContainer = document.getElementById('tag-container');
+
+            // Create tag buttons
+            for (const tag in tags) {
+                const button = document.createElement('button');
+                button.textContent = tag;
+                button.onclick = () => addToFavorites(tags[tag]);
+                tagContainer.appendChild(button);
+            }
+        }
+
+        function addToFavorites(movies) {
+            const favoriteList = document.getElementById('favorite-list');
+            movies.forEach(movie => {
+                const listItem = document.createElement('li');
+                listItem.textContent = movie.title;
+                favoriteList.appendChild(listItem);
+                
+                // Call the API to add to favorites (you will need to implement this)
+                fetch('/users/favorites', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ movieId: movie.id }),
+                });
+            });
+        }
+    </script>
+</body>
+</html>

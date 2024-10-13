@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": "Inception",
+        "tags": ["Sci-Fi", "Thriller", "Action"],
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO."
+    },
+    {
+        "id": 2,
+        "title": "The Godfather",
+        "tags": ["Crime", "Drama"],
+        "description": "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son."
+    },
+    {
+        "id": 3,
+        "title": "Interstellar",
+        "tags": ["Sci-Fi", "Adventure", "Drama"],
+        "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival."
+    },
+    {
+        "id": 4,
+        "title": "The Dark Knight",
+        "tags": ["Action", "Crime", "Drama"],
+        "description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham."
+    },
+    {
+        "id": 5,
+        "title": "Forrest Gump",
+        "tags": ["Drama", "Romance"],
+        "description": "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other history unfold through the perspective of an Alabama man with an IQ of 75."
+    },
+    {
+        "id": 6,
+        "title": "Spirited Away",
+        "tags": ["Animation", "Adventure", "Family"],
+        "description": "During her family's move to the suburbs, a shy girl named Chihiro wanders into the world of spirits and must find her way home."
+    },
+    {
+        "id": 7,
+        "title": "The Shawshank Redemption",
+        "tags": ["Drama"],
+        "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
+    },
+    {
+        "id": 8,
+        "title": "The Matrix",
+        "tags": ["Sci-Fi", "Action"],
+        "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers."
+    }
+]
